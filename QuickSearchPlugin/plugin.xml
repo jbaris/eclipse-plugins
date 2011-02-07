@@ -14,9 +14,14 @@
 			<command commandId="ar.com.fluxit.quick_search.internet_search.command"
 				label="%quick_search.internet_search.label">
 				<visibleWhen checkEnabled="false">
+					<or>
 					<iterate operator="and" ifEmpty="false">
 						<adapt type="org.eclipse.jface.text.ITextSelection" />
 					</iterate>
+					<iterate operator="and" ifEmpty="false">
+						<adapt type="org.eclipse.wst.sse.core.internal.provisional.text.ITextRegion" />
+					</iterate>
+					</or>
 				</visibleWhen>
 			</command>
 		</menuContribution>
@@ -31,9 +36,10 @@
 		<key commandId="ar.com.fluxit.quick_search.file_search.command"
 			contextId="org.eclipse.ui.contexts.window" schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
 			sequence="M1+M2+H" />
-		<key commandId="ar.com.fluxit.quick_search.internet_search.command"
+		<!-- TODO implementar para editor XML -->	
+		<!--key commandId="ar.com.fluxit.quick_search.internet_search.command"
 			contextId="org.eclipse.ui.contexts.window" schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
-			sequence="M1+M2+I" />
+			sequence="M1+M2+B" /-->
 	</extension>
 	<extension point="org.eclipse.ui.startup">
 		<startup class="ar.com.fluxit.quick_search.startup.StartupImpl" />

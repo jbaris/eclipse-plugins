@@ -2,7 +2,7 @@
 <feature
       id="ar.com.fluxit.quick_search"
       label="Quick Search"
-      version="1.0.1"
+      version="1.0.2"
       provider-name="FluxIT">
 
    <description url="http://www.fluxit.com.ar">
@@ -25,7 +25,7 @@
          id="ar.com.fluxit.quick_search.plugin"
          download-size="8"
          install-size="8"
-         version="1.0.1"
+         version="1.0.2"
          unpack="false"/>
 
 </feature>

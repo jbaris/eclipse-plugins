@@ -19,15 +19,22 @@ import org.eclipse.ui.keys.IBindingService;
 @SuppressWarnings("restriction")
 public class StartupImpl implements IStartup {
 
-	private static final String QUICK_SEARCH_KEY_SEQUENCE = "M1+M2+H";
-	private static final Object QUICK_SEARCH_COMMAND = "ar.com.fluxit.quick_search.file_search.command";
+	private static final String QUICK_INTERNET_SEARCH_KEY = "M1+M2+B";
+	private static final String QUICK_INTERNET_SEARCH_COMMAND = "ar.com.fluxit.quick_search.internet_search.command";
+	private static final String QUICK_FILE_SEARCH_KEY = "M1+M2+H";
+	private static final Object QUICK_FILE_SEARCH_COMMAND = "ar.com.fluxit.quick_search.file_search.command";
 
 	@Override
 	public void earlyStartup() {
+		removeBinding(QUICK_FILE_SEARCH_KEY, QUICK_FILE_SEARCH_COMMAND);
+		removeBinding(QUICK_INTERNET_SEARCH_KEY, QUICK_INTERNET_SEARCH_COMMAND);
+	}
+
+	private void removeBinding(String keySequence, Object targetCommand) {
 		try {
 			// Quita los bindings de CTRL+SHIFT+P
 			final Trigger keySecuence = KeyStroke
-					.getInstance(QUICK_SEARCH_KEY_SEQUENCE);
+					.getInstance(keySequence);
 			final IBindingService service = (IBindingService) Workbench
 					.getInstance().getService(IBindingService.class);
 			final List<Binding> toRemove = new ArrayList<Binding>();
@@ -36,7 +43,7 @@ public class StartupImpl implements IStartup {
 						.getTriggers()) {
 					if (trigger.equals(keySecuence)
 							&& !binding.getParameterizedCommand().getId()
-									.equals(QUICK_SEARCH_COMMAND)) {
+									.equals(targetCommand)) {
 						toRemove.add(binding);
 					}
 				}
