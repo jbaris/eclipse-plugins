@@ -7,7 +7,7 @@ import org.osgi.framework.BundleContext;
 /**
  * Activator
  * 
- * @author jbaris
+ * @author Juan Barisich (<a href="mailto:juan.barisich@gmail.com">juan.barisich@gmail.com</a>)
  */
 public class Activator extends AbstractUIPlugin {
 

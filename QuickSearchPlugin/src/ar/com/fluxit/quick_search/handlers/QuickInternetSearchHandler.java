@@ -1,7 +1,8 @@
 package ar.com.fluxit.quick_search.handlers;
 
 import java.net.URL;
-import java.util.Set;
+import java.util.Collection;
+import java.util.Iterator;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -17,7 +18,7 @@ import ar.com.fluxit.quick_search.Activator;
 /**
  * Handler de Quick Internet Search
  * 
- * @author jbaris
+ * @author Juan Barisich (<a href="mailto:juan.barisich@gmail.com">juan.barisich@gmail.com</a>)
  */
 public class QuickInternetSearchHandler extends AbstractHandler {
 
@@ -33,14 +34,21 @@ public class QuickInternetSearchHandler extends AbstractHandler {
 		try {
 			final EvaluationContext context = (EvaluationContext) event
 					.getApplicationContext();
-			final Set<?> set = (Set<?>) context.getDefaultVariable();
-			final ITextSelection selection = (ITextSelection) set.iterator()
-					.next();
-			final String textSelecion = selection.getText();
-			final String _url = this.url.replace("%%", textSelecion);
-			PlatformUI.getWorkbench().getBrowserSupport().createBrowser(
-					IWorkbenchBrowserSupport.AS_EXTERNAL, "aCustomId", "url",
-					"url").openURL(new URL(_url));
+			final Collection<?> set = (Collection<?>) context
+					.getDefaultVariable();
+			Iterator<?> iterator = set.iterator();
+			if (iterator.hasNext()) {
+				final ITextSelection selection = (ITextSelection) iterator
+						.next();
+				final String textSelecion = selection.getText();
+				final String _url = this.url.replace("%%", textSelecion);
+				PlatformUI
+						.getWorkbench()
+						.getBrowserSupport()
+						.createBrowser(IWorkbenchBrowserSupport.AS_EXTERNAL,
+								"aCustomId", "url", "url")
+						.openURL(new URL(_url));
+			}
 		} catch (Exception e) {
 			throw new IllegalStateException(e);
 		}

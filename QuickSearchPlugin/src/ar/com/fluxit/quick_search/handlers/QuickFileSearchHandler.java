@@ -16,7 +16,7 @@ import ar.com.fluxit.quick_search.Activator;
 /**
  * Handler de Quick File Search
  * 
- * @author jbaris
+ * @author Juan Barisich (<a href="mailto:juan.barisich@gmail.com">juan.barisich@gmail.com</a>)
  */
 @SuppressWarnings("restriction")
 public class QuickFileSearchHandler extends AbstractHandler {

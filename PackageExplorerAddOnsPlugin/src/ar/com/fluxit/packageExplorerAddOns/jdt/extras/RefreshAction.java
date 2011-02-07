@@ -9,7 +9,7 @@ import org.eclipse.ui.IViewPart;
 /**
  * Refresh Action
  * 
- * @author jbaris
+ * @author Juan Barisich (<a href="mailto:juan.barisich@gmail.com">juan.barisich@gmail.com</a>)
  */
 public class RefreshAction extends Action implements IViewActionDelegate {
 

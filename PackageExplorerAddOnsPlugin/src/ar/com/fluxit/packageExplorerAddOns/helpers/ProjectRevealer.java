@@ -9,6 +9,11 @@ import org.eclipse.ui.internal.dialogs.DialogUtil;
 
 import ar.com.fluxit.packageExplorerAddOns.dialogs.PackageExplorerFinderDialog;
 
+/**
+ * Revealer de proyectos
+ * 
+ * @author Juan Barisich (<a href="mailto:juan.barisich@gmail.com">juan.barisich@gmail.com</a>)
+ */
 @SuppressWarnings("restriction")
 public class ProjectRevealer {
 

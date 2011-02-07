@@ -9,7 +9,7 @@ import org.eclipse.ui.IWorkingSet;
 /**
  * Filtro de proyectos
  * 
- * @author jbaris
+ * @author Juan Barisich (<a href="mailto:juan.barisich@gmail.com">juan.barisich@gmail.com</a>)
  */
 @SuppressWarnings("restriction")
 public class ProjectsFilter extends ViewerFilter {

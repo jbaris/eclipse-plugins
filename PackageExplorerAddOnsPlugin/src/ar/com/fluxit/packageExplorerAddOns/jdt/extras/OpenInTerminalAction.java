@@ -12,7 +12,7 @@ import ar.com.fluxit.packageExplorerAddOns.terminal.Terminal;
 /**
  * Open in terminal Action
  * 
- * @author jbaris
+ * @author Juan Barisich (<a href="mailto:juan.barisich@gmail.com">juan.barisich@gmail.com</a>)
  */
 public class OpenInTerminalAction extends Action implements IViewActionDelegate {
 

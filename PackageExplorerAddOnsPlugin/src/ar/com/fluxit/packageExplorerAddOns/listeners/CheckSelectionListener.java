@@ -7,7 +7,11 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.dialogs.FilteredTree;
 
 import ar.com.fluxit.packageExplorerAddOns.filters.ProjectsFilter;
-
+/**
+ * Check listener
+ * 
+ * @author Juan Barisich (<a href="mailto:juan.barisich@gmail.com">juan.barisich@gmail.com</a>)
+ */
 public class CheckSelectionListener extends SelectionAdapter {
 
 	private final ProjectsFilter projectsFilter;

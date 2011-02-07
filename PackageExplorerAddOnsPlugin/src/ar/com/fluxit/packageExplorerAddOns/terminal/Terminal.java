@@ -17,7 +17,7 @@ import ar.com.fluxit.packageExplorerAddOns.Activator;
 /**
  * Open in Terminal Helper
  * 
- * @author jbaris
+ * @author Juan Barisich (<a href="mailto:juan.barisich@gmail.com">juan.barisich@gmail.com</a>)
  * @author http://code.google.com/p/eclipse-openinterminal
  */
 public class Terminal {

@@ -1,1 +1,2 @@
 1.0.0 = Version inicial
+1.0.1 = Se utiliza Collection para tipar seleccion de texto

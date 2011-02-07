@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Quick Search
 Bundle-SymbolicName: ar.com.fluxit.quick_search.plugin;singleton:=true
-Bundle-Version: 1.0.0
+Bundle-Version: 1.0.1
 Bundle-Activator: ar.com.fluxit.quick_search.Activator
 Bundle-Vendor: FluxIT
 Require-Bundle: org.eclipse.ui,

@@ -8,7 +8,7 @@ import org.eclipse.ui.dialogs.PatternFilter;
 /**
  * PatternFilter de proyectos
  * 
- * @author juani
+ * @author Juan Barisich (<a href="mailto:juan.barisich@gmail.com">juan.barisich@gmail.com</a>)
  */
 public class ProjectsPatternFilter extends PatternFilter {
 

@@ -14,7 +14,7 @@ import org.eclipse.ui.keys.IBindingService;
 /**
  * Inicializador del ambiente
  * 
- * @author jbaris
+ * @author Juan Barisich (<a href="mailto:juan.barisich@gmail.com">juan.barisich@gmail.com</a>)
  */
 @SuppressWarnings("restriction")
 public class StartupImpl implements IStartup {

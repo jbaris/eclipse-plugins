@@ -14,7 +14,7 @@ import ar.com.fluxit.packageExplorerAddOns.helpers.ProjectRevealer;
 /**
  * Tree listener
  * 
- * @author jbaris
+ * @author Juan Barisich (<a href="mailto:juan.barisich@gmail.com">juan.barisich@gmail.com</a>)
  */
 public class TreeListener implements IDoubleClickListener,
 		ISelectionChangedListener {
