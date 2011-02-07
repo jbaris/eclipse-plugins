@@ -1,0 +1,2 @@
+1.0.0 = Version inicial
+1.0.1 = Se modifican dependencias a Eclipse 3.5.1

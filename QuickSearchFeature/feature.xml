@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="ar.com.fluxit.quick_search"
+      label="Quick Search"
+      version="1.0.0"
+      provider-name="FluxIT">
+
+   <description url="http://www.fluxit.com.ar">
+      %description
+   </description>
+
+   <copyright url="http://tools.intranet.fluxit.com.ar/eclipse/">
+      %copyright
+   </copyright>
+
+   <license url="http://www.gnu.org/licenses/gpl-3.0.txt">
+      %license
+   </license>
+
+   <url>
+      <update label="FluxIT Update Site" url="http://tools.intranet.fluxit.com.ar/eclipse/"/>
+   </url>
+
+   <plugin
+         id="ar.com.fluxit.quick_search.plugin"
+         download-size="54"
+         install-size="54"
+         version="1.0.0"
+         unpack="false"/>
+
+</feature>

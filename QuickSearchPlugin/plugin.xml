@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+			<command commandId="ar.com.fluxit.quick_search.file_search.command"
+				label="%quick_search.file_search.label">
+				<visibleWhen checkEnabled="false">
+					<iterate operator="and" ifEmpty="false">
+						<adapt type="org.eclipse.jface.text.ITextSelection" />
+					</iterate>
+				</visibleWhen>
+			</command>
+			<command commandId="ar.com.fluxit.quick_search.internet_search.command"
+				label="%quick_search.internet_search.label">
+				<visibleWhen checkEnabled="false">
+					<iterate operator="and" ifEmpty="false">
+						<adapt type="org.eclipse.jface.text.ITextSelection" />
+					</iterate>
+				</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<extension point="org.eclipse.ui.commands">
+		<command id="ar.com.fluxit.quick_search.file_search.command"
+			name="%quick_search.file_search.label" defaultHandler="ar.com.fluxit.quick_search.handlers.QuickFileSearchHandler" />
+		<command id="ar.com.fluxit.quick_search.internet_search.command"
+			name="%quick_search.internet_search.label" defaultHandler="ar.com.fluxit.quick_search.handlers.QuickInternetSearchHandler" />
+	</extension>
+	<extension point="org.eclipse.ui.bindings">
+		<key commandId="ar.com.fluxit.quick_search.file_search.command"
+			contextId="org.eclipse.ui.contexts.window" schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+			sequence="M1+M2+H" />
+		<key commandId="ar.com.fluxit.quick_search.internet_search.command"
+			contextId="org.eclipse.ui.contexts.window" schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+			sequence="M1+M2+I" />
+	</extension>
+	<extension point="org.eclipse.ui.startup">
+		<startup class="ar.com.fluxit.quick_search.startup.StartupImpl" />
+	</extension>
+</plugin>

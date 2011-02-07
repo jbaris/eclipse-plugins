@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension point="org.eclipse.ui.viewActions">
+		<viewContribution targetID="org.eclipse.jdt.ui.PackageExplorer"
+			id="ar.com.fluxit.packageExplorerAddOns.jdt.viewcontribution.packageexplorer.refresh">
+			<action label="Refresh" icon="icons/refresh_e.gif"
+				disabledIcon="icons/refresh_d.gif" tooltip="Refresh"
+				class="ar.com.fluxit.packageExplorerAddOns.jdt.extras.RefreshAction"
+				menubarPath="additions" toolbarPath="additions" enablesFor="+"
+				id="ar.com.fluxit.packageExplorerAddOns.jdt.extras.refresh">
+			</action>
+		</viewContribution>
+	</extension>
+	<extension point="org.eclipse.ui.viewActions">
+		<viewContribution targetID="org.eclipse.jdt.ui.PackageExplorer"
+			id="ar.com.fluxit.packageExplorerAddOns.jdt.viewcontribution.packageexplorer.openInTerminal">
+			<action label="Open in Terminal" icon="icons/openInTerminal_e.gif"
+				disabledIcon="icons/openInTerminal_d.gif" tooltip="Open in Terminal"
+				class="ar.com.fluxit.packageExplorerAddOns.jdt.extras.OpenInTerminalAction"
+				menubarPath="additions" toolbarPath="additions" enablesFor="+"
+				id="ar.com.fluxit.packageExplorerAddOns.jdt.extras.openInTerminal">
+			</action>
+		</viewContribution>
+	</extension>
+	<extension point="org.eclipse.ui.commands">
+		<command
+			defaultHandler="ar.com.fluxit.packageExplorerAddOns.handlers.OpenPackageExplorerFinderHandler"
+			id="ar.com.fluxit.packageExplorerAddOns.commands.PackageExplorerOpenDialogAction"
+			name="Open Package Explorer Finder" />
+	</extension>
+	<extension point="org.eclipse.ui.bindings">
+		<key
+            sequence="M1+M2+P"
+            commandId="ar.com.fluxit.packageExplorerAddOns.commands.PackageExplorerOpenDialogAction"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>				
+	</extension>
+	<extension point="org.eclipse.ui.startup">
+	    <startup class="ar.com.fluxit.packageExplorerAddOns.startup.StartupImpl"/>
+	</extension>
+
+</plugin>

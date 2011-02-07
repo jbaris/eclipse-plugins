@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Package Explorer Add-Ons
+Bundle-SymbolicName: ar.com.fluxit.package_explorer_addons.plugin;singleton:=true
+Bundle-Version: 1.0.1
+Bundle-Activator: ar.com.fluxit.packageExplorerAddOns.Activator
+Bundle-Vendor: FluxIT
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.jdt.ui;bundle-version="3.5.1",
+ org.eclipse.jdt.core;bundle-version="3.5.1",
+ org.eclipse.core.resources;bundle-version="3.5.1",
+ org.eclipse.jface.text;bundle-version="3.5.1",
+ org.eclipse.ui.navigator;bundle-version="3.4.2"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Bundle-Localization: plugin

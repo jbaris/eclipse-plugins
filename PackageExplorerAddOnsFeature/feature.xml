@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="ar.com.fluxit.package_explorer_addons"
+      label="Package Explorer Add-Ons"
+      version="1.0.1"
+      provider-name="FluxIT">
+
+   <description url="http://www.fluxit.com.ar">
+      %description
+   </description>
+
+   <copyright url="http://tools.intranet.fluxit.com.ar/eclipse/">
+      %copyright
+   </copyright>
+
+   <license url="http://www.gnu.org/licenses/gpl-3.0.txt">
+      %license
+   </license>
+
+   <url>
+      <update label="FluxIT Update Site" url="http://tools.intranet.fluxit.com.ar/eclipse/"/>
+   </url>
+
+   <requires>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.jdt.ui" version="3.5.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jdt.core" version="3.5.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.resources" version="3.5.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jface.text" version="3.5.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.navigator" version="3.4.2" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.expressions" version="3.4.101" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.search" version="3.5.1" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="ar.com.fluxit.package_explorer_addons.plugin"
+         download-size="54"
+         install-size="54"
+         version="1.0.1"
+         unpack="false"/>
+
+</feature>
