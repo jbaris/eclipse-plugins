@@ -10,11 +10,11 @@ import org.eclipse.ui.IViewPart;
 import ar.com.fluxit.packageExplorerAddOns.terminal.FileOpener;
 
 /**
- * Open in terminal Action
+ * Open in nautilus Action
  * 
  * @author Juan Barisich (<a href="mailto:juan.barisich@gmail.com">juan.barisich@gmail.com</a>)
  */
-public class OpenInTerminalAction extends Action implements IViewActionDelegate {
+public class OpenInNautilusAction extends Action implements IViewActionDelegate {
 
 	private ISelection selection;
 	private IViewPart viewPart;
@@ -29,7 +29,7 @@ public class OpenInTerminalAction extends Action implements IViewActionDelegate 
 		if (selection instanceof StructuredSelection) {
 			final StructuredSelection structuredSelection = (StructuredSelection) selection;
 			for (final Object object : structuredSelection.toList()) {
-				FileOpener.open(viewPart.getSite().getShell(), object, FileOpener.OpenerType.TERMINAL);
+				FileOpener.open(viewPart.getSite().getShell(), object, FileOpener.OpenerType.NAUTILUS);
 			}
 		}
 	}

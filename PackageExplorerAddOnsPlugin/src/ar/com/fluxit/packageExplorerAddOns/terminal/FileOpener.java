@@ -17,14 +17,30 @@ import ar.com.fluxit.packageExplorerAddOns.Activator;
 /**
  * Open in Terminal Helper
  * 
- * @author Juan Barisich (<a href="mailto:juan.barisich@gmail.com">juan.barisich@gmail.com</a>)
+ * @author Juan Barisich (<a
+ *         href="mailto:juan.barisich@gmail.com">juan.barisich@gmail.com</a>)
  * @author http://code.google.com/p/eclipse-openinterminal
  */
-public class Terminal {
+public class FileOpener {
 
-	private static String[] getCommand(IPath path) {
+	public enum OpenerType {
+
+		NAUTILUS("%Open_Command_Nautilus"), TERMINAL("%Open_Command_Terminal");
+
+		private String command;
+
+		OpenerType(String command) {
+			this.command = command;
+		}
+
+		String getCommand() {
+			return this.command;
+		}
+	}
+
+	private static String[] getCommand(IPath path, String string) {
 		String[] result = Platform.getResourceString(
-				Activator.getDefault().getBundle(), "%Open_Command").split(" ");
+				Activator.getDefault().getBundle(), string).split(" ");
 		int i = searchPathIndex(result);
 		result[i] = result[i].replace("%%", path.toOSString());
 		return result;
@@ -38,56 +54,56 @@ public class Terminal {
 		return -1;
 	}
 
-	public static void openInTerminal(Shell shell, IFile file) {
+	private static void open(Shell shell, IFile file, OpenerType nautilus) {
 		try {
 			Runtime.getRuntime().exec(
-					getCommand(file.getLocation().removeLastSegments(1)));
+					getCommand(file.getLocation().removeLastSegments(1),
+							nautilus.getCommand()));
 		} catch (final IOException e) {
 			showDialog(shell, "Could not open terminal: " + e.getMessage());
 		}
 	}
 
-	public static void openInTerminal(Shell shell, IPath path) {
+	private static void open(Shell shell, IPath path, OpenerType nautilus) {
 		try {
-			Runtime.getRuntime().exec(getCommand(path));
+			Runtime.getRuntime().exec(getCommand(path, nautilus.getCommand()));
 		} catch (final IOException e) {
 			showDialog(shell, "Could not open terminal: " + e.getMessage());
 		}
 	}
 
-	public static void openInTerminal(Shell shell, Object object) {
+	public static void open(Shell shell, Object object, OpenerType nautilus) {
 		if (object instanceof IFile) {
 			// Open the file
-			Terminal.openInTerminal(shell, (IFile) object);
+			FileOpener.open(shell, (IFile) object, nautilus);
 		} else if (object instanceof IContainer) {
 			// Open the container
-			Terminal.openInTerminal(shell, ((IContainer) object).getLocation());
+			FileOpener.open(shell, ((IContainer) object).getLocation(), nautilus);
 		} else if (object instanceof IProjectNature) {
 			// Open the project folder
-			Terminal.openInTerminal(shell, ((IProjectNature) object)
-					.getProject().getLocation());
+			FileOpener.open(shell, ((IProjectNature) object).getProject()
+					.getLocation(), nautilus);
 		} else if (object instanceof IJavaElement) {
 			// Get the full path to the Java element
 			final IJavaElement javaElement = (IJavaElement) object;
 			IPath fullPath = javaElement.getJavaProject().getProject()
-					.getLocation().append(
-							javaElement.getPath().removeFirstSegments(1));
+					.getLocation()
+					.append(javaElement.getPath().removeFirstSegments(1));
 
 			// Trim the path if this is not a container
 			if (object instanceof ICompilationUnit) {
 				fullPath = fullPath.removeLastSegments(1);
 			}
-
 			// Open it
-			Terminal.openInTerminal(shell, fullPath);
+			FileOpener.open(shell, fullPath, nautilus);
 		} else {
 			// No applicatble selection
-			showDialog(shell, "No applicable resource selected: "
-					+ object.getClass());
+			showDialog(shell,
+					"No applicable resource selected: " + object.getClass());
 		}
 	}
 
-	public static void showDialog(Shell shell, String message) {
+	private static void showDialog(Shell shell, String message) {
 		MessageDialog.openInformation(shell, "OpenInTerminal Plug-in", message);
 	}
 

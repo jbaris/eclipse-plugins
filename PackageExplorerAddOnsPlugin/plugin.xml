@@ -23,6 +23,17 @@
 			</action>
 		</viewContribution>
 	</extension>
+	<extension point="org.eclipse.ui.viewActions">
+		<viewContribution targetID="org.eclipse.jdt.ui.PackageExplorer"
+			id="ar.com.fluxit.packageExplorerAddOns.jdt.viewcontribution.packageexplorer.openInNautilus">
+			<action label="Open in Nautilus" icon="icons/openInNautilus_e.gif"
+				disabledIcon="icons/openInNautilus_d.gif" tooltip="Open in Nautilus"
+				class="ar.com.fluxit.packageExplorerAddOns.jdt.extras.OpenInNautilusAction"
+				menubarPath="additions" toolbarPath="additions" enablesFor="+"
+				id="ar.com.fluxit.packageExplorerAddOns.jdt.extras.openInNautilus">
+			</action>
+		</viewContribution>
+	</extension>
 	<extension point="org.eclipse.ui.commands">
 		<command
 			defaultHandler="ar.com.fluxit.packageExplorerAddOns.handlers.OpenPackageExplorerFinderHandler"
