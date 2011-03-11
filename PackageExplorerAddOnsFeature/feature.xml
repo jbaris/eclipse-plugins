@@ -2,7 +2,7 @@
 <feature
       id="ar.com.fluxit.package_explorer_addons"
       label="Package Explorer Add-Ons"
-      version="1.0.1"
+      version="1.0.2"
       provider-name="FluxIT">
 
    <description url="http://www.fluxit.com.ar">
@@ -37,7 +37,7 @@
          id="ar.com.fluxit.package_explorer_addons.plugin"
          download-size="54"
          install-size="54"
-         version="1.0.1"
+         version="1.0.2"
          unpack="false"/>
 
 </feature>

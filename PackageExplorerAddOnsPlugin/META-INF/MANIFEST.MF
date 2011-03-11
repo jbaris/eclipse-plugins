@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Package Explorer Add-Ons
 Bundle-SymbolicName: ar.com.fluxit.package_explorer_addons.plugin;singleton:=true
-Bundle-Version: 1.0.1
+Bundle-Version: 1.0.2
 Bundle-Activator: ar.com.fluxit.packageExplorerAddOns.Activator
 Bundle-Vendor: FluxIT
 Require-Bundle: org.eclipse.ui,
